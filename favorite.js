@@ -22,10 +22,11 @@ dataPanel.addEventListener("click", function onPanelClicked(event) {
 //removeFromFavroiateMovie方法
 function removeFromFaroiateMovie(id) {
   //一旦傳入的 id 在收藏清單中不存在則return
-  if (!movies || !movies.length) return;
+  if (!favoriteMovies || !favoriteMovies.length) return;
+
   //使用target的id，去找尋localStorage的電影資料索引位置
   const movieIndex = favoriteMovies.findIndex((favoriteMovie) => {
-    favoriteMovie.id === id;
+    return favoriteMovie.id === id;
   });
   //找不到movieIndex 則return
   if (movieIndex === -1) return;
